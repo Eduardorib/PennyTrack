@@ -7,6 +7,10 @@ node_modules/
 .env.*
 !.env.example
 
+# Pycache
+__pycache__/
+*.py[cod]
+
 # Logs
 *.log
 logs/
@@ -25,11 +29,10 @@ out/
 # IDE and editor files
 .vscode/*
 !.vscode/extensions.json
-!.vscode/settings.json
+.vscode/settings.json
 .idea/
 *.swp
 
 # Operating system files
 .DS_Store
 Thumbs.db
-
