@@ -3,7 +3,7 @@ import uvicorn
 
 def main() -> None:
     uvicorn.run(
-        "finance_app.main:app",
+        "penny_track.main:app",
         host="127.0.0.1",
         port=8000,
         reload=True,
