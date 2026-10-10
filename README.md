@@ -34,10 +34,20 @@ PennyTrack helps keep personal financial activity in one place through a fast, s
 ```bash
 git clone <repository-url>
 cd finance-app
-pip install -r requirements.txt
+uv sync
 ```
 
-Configure your PostgreSQL connection, then start the API with your preferred FastAPI server.
+Create a PostgreSQL database named `penny_track`, then configure the connection string
+through the `DATABASE_URL` environment variable:
+
+```powershell
+$env:DATABASE_URL = "postgresql+psycopg://postgres:your_password@localhost:5432/penny_track"
+uv run uvicorn penny_track.main:app --reload
+```
+
+The URL uses the `psycopg` driver already declared in `pyproject.toml`. For local
+development, copy `.env.example` to `.env` and replace the placeholder values;
+load those variables in your terminal or through your VS Code launch configuration.
 
 ## 📖 API Documentation
 
